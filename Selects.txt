@@ -1,0 +1,38 @@
+select * from pessoas where Nome like '% %'									KhanAcademy
+select * from amigos where ID_Pessoas = 
+
+select * from Pessoas.Nome, Postagens.Postagem, Like_Amigos.ID_Like from Pessoas
+	inner join Postagens on Pessoas.ID = Postagens.ID_Pessoa
+	inner join Like_Amigos on Postagens.ID = Like_Amigos.ID_Postagem
+
+
+
+select Pessoas.Nome, Pessoas.ID, Amigos.ID_Amigos, AmigosMeus.Nome from Pessoas
+inner join Amigos on Pessoas.ID = Amigos.ID_Pessoas
+inner join Pessoas as AmigosMeus on Amigos.ID_Amigos = AmigosMeus.ID
+
+where Pessoas.ID = 5
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+select Pessoas.Nome, Pessoas.ID, Like_Amigos.ID_Like, Postagens.Postagem, Resposta.Comentario from Pessoas
+inner join Like_Amigos on Pessoas.ID = Like_Amigos.ID
+inner join Postagens on Like_Amigos.ID = Postagens.ID
+inner join Resposta on Postagens.ID = Resposta.IdPostagem
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+De Pessoas para Like_Amigos 
+De Like_Amigos para Postagens
+De Postagens para Resposta
+
+
+--respostas de uma pessoa
+
+select Pessoas.Nome, Resposta.Comentario from Pessoas
+	inner join Resposta on Pessoas.ID = Resposta.IdPessoa
+
+	where Pessoas.ID = 1
+
+
